@@ -3,9 +3,6 @@
 def validar_entero_positivo(prompt):
     """
     Solicita un valor al usuario y valida que sea un número entero positivo.
-    
-    Returns:
-        int or None: The number integer if it is valid, None otherwise.
     """
     while True:
         valor_str = input(prompt).strip()
@@ -24,9 +21,6 @@ def validar_entero_positivo(prompt):
 def obtener_rango_valido(key_name):
     """
     Solicita un rango (mínimo y máximo) y valida que sean números.
-    
-    Returns:
-        tuple (int, int) or None: (min_val, max_val) if it is valid, None otherwise.
     """
     print(f"\n--- Ingrese Rango de {key_name} ---")
     min_val = validar_entero_positivo(f"Mínimo de {key_name}: ")
@@ -37,7 +31,6 @@ def obtener_rango_valido(key_name):
     max_val = validar_entero_positivo(f"Máximo de {key_name}: ")
 
     if max_val is None:
-        # If max_val is not entered, it is assumed that the maximum is equal to the minimum.
         max_val = min_val 
     
     if min_val > max_val:

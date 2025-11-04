@@ -3,9 +3,7 @@
 import utilidades
 
 def ordenar_paises(lista_paises):
-    """
-    (Opción 4) Shows a submenu to sort the list of countries.
-    """
+
     if not lista_paises:
         print("ERROR: No hay datos cargados para ordenar.")
         return
@@ -24,7 +22,7 @@ def ordenar_paises(lista_paises):
         elif opcion_campo == '1':
             key = 'nombre'
             titulo_campo = 'Nombre'
-            # Alphabetical ordering always ascending
+            # Orden alfabetico ascendente
             _aplicar_ordenamiento(lista_paises, key, titulo_campo, reverse=False)
             break
             
@@ -37,7 +35,7 @@ def ordenar_paises(lista_paises):
                 if orden in ['d', 'a']:
                     reverse = (orden == 'd')
                     _aplicar_ordenamiento(lista_paises, key, titulo_campo, reverse)
-                    return # Return to the main menu after showing the result
+                    return # Regresa al menú principal después de mostrar el resultado
                 else:
                     print("Opción no válida. Ingrese 'A' o 'D'.")
         else:
@@ -45,10 +43,8 @@ def ordenar_paises(lista_paises):
 
 
 def _aplicar_ordenamiento(lista_paises, key, titulo_campo, reverse):
-    """
-    Applies the sort and shows the resulting list.
-    """
-    # Use sorted() to create a NEW ordered list 
+
+    # Utilice sorted() para crear una NUEVA lista ordenada
     lista_ordenada = sorted(
         lista_paises, 
         key=lambda pais: pais[key], 

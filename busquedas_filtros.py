@@ -62,7 +62,6 @@ def filtro_continente(lista_paises):
         print("Filtro cancelado.")
         return
 
-    # Filters concisely
     resultados = [pais for pais in lista_paises if pais['continente'] == continente]
     
     utilidades.mostrar_lista_paises(resultados, f"Países Filtrados por Continente: {continente}")
